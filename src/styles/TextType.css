@@ -1,0 +1,37 @@
+.text-type {
+  display: inline-block;
+  position: relative;
+}
+
+.text-type-cursor {
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 1s infinite;
+  font-weight: 400;
+  color: inherit;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+/* Smooth typing animation */
+.text-type {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 0.1s steps(1);
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
