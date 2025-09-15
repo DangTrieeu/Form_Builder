@@ -68,7 +68,7 @@ npm run preview
 ```
 
 ## Firebase cấu hình
-Hiện tại file `firebase.js` đang ghi trực tiếp cấu hình. Nên chuyển sang biến môi trường:
+Hiện tại file `firebase.js` đang ghi trực tiếp cấu hình:
 ```
 VITE_FIREBASE_API_KEY=...
 VITE_FIREBASE_AUTH_DOMAIN=...
@@ -78,7 +78,6 @@ VITE_FIREBASE_MESSAGING_SENDER_ID=...
 VITE_FIREBASE_APP_ID=...
 VITE_FIREBASE_MEASUREMENT_ID=...
 ```
-Sau đó trong `firebase.js` đọc từ `import.meta.env`.
 
 ## Quy trình lưu Form
 1. Người dùng soạn câu hỏi ở `/editor`.
@@ -94,36 +93,3 @@ Sau đó trong `firebase.js` đọc từ `import.meta.env`.
 2. Trong `QuestionEditor.jsx` và `RenderForm.jsx` bổ sung xử lý hiển thị (case mới trong switch / renderField).
 3. (Tuỳ chọn) Thêm logic lưu dữ liệu phụ trợ (ví dụ upload file → Cloudinary / S3 / Uploadcare).
 
-## Gợi ý mở rộng
-- Drag & drop reorder câu hỏi (react-beautiful-dnd / @dnd-kit/core).
-- Lưu lịch sử phiên bản form.
-- Tạo template form mẫu.
-- Thêm xác thực người trả lời (Auth + hạn chế 1 lần gửi).
-- Thêm trường “file upload”.
-- Gửi email thông báo (Resend / SendGrid).
-- API ghi nhận câu trả lời vào collection `responses`.
-- Thêm dark mode hoặc theming động.
-
-## Xử lý lỗi
-- Dùng `ErrorBoundary` để tránh trắng màn hình.
-- Console log có tiền tố `[SAVE]`, kiểm tra khi thao tác lưu.
-- Nếu Firestore báo permission denied → kiểm tra lại Firestore Rules.
-
-## Chất lượng & Best Practices
-- Tránh để secret trực tiếp trong repo.
-- Đảm bảo unique key cho field bằng id (Date.now hoặc UUID).
-- Tách logic pure (thao tác array fields) nếu phức tạp hơn.
-- Cân nhắc thêm type (TypeScript) nếu dự án mở rộng.
-
-## Deploy
-- Build: `npm run build` → thư mục `dist/`.
-- Có thể deploy lên: Vercel, Netlify, Firebase Hosting, Cloudflare Pages.
-- Nhớ cấu hình rewrite tất cả route về `index.html` (SPA).
-
-## License
-Tuỳ chọn: MIT (chưa khai báo). Có thể thêm file `LICENSE` sau.
-
----
-**Liên hệ mở rộng**: Thêm yêu cầu mới (lưu phản hồi, phân trang, tìm kiếm, thống kê) có thể bổ sung dần. 
-
-Chúc bạn phát triển dự án thuận lợi! ✨
