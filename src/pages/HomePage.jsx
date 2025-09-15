@@ -6,6 +6,7 @@ const navItems = [
   { label: 'Trang chủ', href: '/' },
   { label: 'Tạo form', href: '/editor' },
   { label: 'Có sẵn', href: '/forms' },
+    { label: 'Trang Admin', href: '/admin/responses' },
   { label: 'Tài liệu', href: 'https://reactbits.dev' },
 ];
 
@@ -23,10 +24,10 @@ export default function HomePage() {
             text={[
               "Tạo biểu mẫu chuyên nghiệp trong vài phút",
               "Trải nghiệm như Google Forms",
-              "Giao diện đẹp, dễ sử dụng"
+              "Giao diện dễ sử dụng",
             ]}
             typingSpeed={75}
-            pauseDuration={2000}
+            pauseDuration={200}
             showCursor={true}
             cursorCharacter="|"
           />
@@ -36,15 +37,6 @@ export default function HomePage() {
           Công cụ tạo biểu mẫu mạnh mẽ với giao diện hiện đại,
           hỗ trợ nhiều loại câu hỏi và tùy chỉnh linh hoạt
         </p>
-
-        {/*<div className="cta-buttons">*/}
-        {/*  <Link to="/editor" className="cta-button">*/}
-        {/*    Bắt đầu tạo form*/}
-        {/*  </Link>*/}
-        {/*  <Link to="/editor" className="cta-button">*/}
-        {/*    Dùng mẫu có sẵn*/}
-        {/*  </Link>*/}
-        {/*</div>*/}
 
         <div className="features-grid">
           <div className="feature-card">
